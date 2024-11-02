@@ -1,0 +1,158 @@
+*{/*called astrec to set margin and padding 0 for all element*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;/*to ignore effect of padding and border*/
+}
+
+/* Main container layout as a grid */
+.container {
+  display: grid;
+  grid-template-areas: 
+      "header"
+      "main"
+      "footer";
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
+/* Basic body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f8ff; 
+ 
+}
+
+/* Header styling using Flexbox */
+header {
+  background-color: #80c1ff; 
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between; /* Align links on the right and name on the left */
+  align-items: center;
+  color: #ffffff; 
+  grid-area: header;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  text-align: left;
+}
+
+/* Navigation styling */
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: #ffffff; 
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;/* Smooth transition effect for background color change over 0.3 seconds
+  It's true that I didn't mention it in the course, but I knew it from before and I didn't cheat on it anywhere ^-^ */
+}
+
+nav a:hover {
+  background-color: #4da3e6; /* when click on a */
+}
+
+/* Subheading styling */
+h2 {
+  color: #4da3e6; 
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.8rem;
+}
+
+/* Projects section  styling */
+#projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+  grid-area: main;
+}
+
+/* Project card styling */
+.project-card {
+  background-color: #ffffff; 
+  border: 1px solid #dddddd; 
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.project-card figcaption {
+  font-weight: bold;
+  margin-top: 0.5rem;
+  color: #4da3e6; 
+}
+
+.project-card p {
+  color: #333333; 
+  font-size: 0.9rem;
+  margin: 1rem 0;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: #ffffff; 
+  background-color: #80c1ff; 
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-top: auto;
+}
+
+.project-card a:hover {
+  background-color: #4da3e6; /
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #80c1ff; 
+  color: #ffffff; 
+  grid-area: footer;
+}
+
+/* Media query for medium screens (tablet size) */
+@media (max-width: 1024px) {
+  #projects {
+      grid-template-columns: 1fr 1fr; /* Two columns on medium screens */
+  }
+}
+
+/* Media query for small screens (mobile) */
+@media (max-width: 768px) {
+  #projects {
+      grid-template-columns: 1fr; /* One column on small screens */
+  }
+
+  /* Change header layout to column on small screens */
+  header {
+      flex-direction: column;
+  }
+
+  /* Center nav links in a column layout */
+  nav {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  /* Center the header title */
+  header h1 {
+      text-align: center;
+  }
+}
+
